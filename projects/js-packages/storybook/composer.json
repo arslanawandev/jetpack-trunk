@@ -1,0 +1,47 @@
+{
+	"name": "automattic/jetpack-storybook",
+	"description": "Jetpack Storybook component library",
+	"type": "library",
+	"license": "GPL-2.0-or-later",
+	"require": {},
+	"require-dev": {
+		"yoast/phpunit-polyfills": "1.1.0",
+		"automattic/jetpack-changelogger": "@dev"
+	},
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	},
+	"scripts": {
+		"build-development": "pnpm run storybook:build",
+		"test-js": "pnpm run test"
+	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "../../packages/*",
+			"options": {
+				"monorepo": true
+			}
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"extra": {
+		"dependencies": {
+			"build": [
+				"js-packages/ai-client",
+				"js-packages/components",
+				"js-packages/connection",
+				"js-packages/idc",
+				"packages/my-jetpack",
+				"packages/search",
+				"plugins/protect",
+				"plugins/boost",
+				"packages/videopress"
+			]
+		},
+		"mirror-repo": "Automattic/jetpack-storybook"
+	}
+}
